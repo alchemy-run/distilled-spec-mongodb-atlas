@@ -2092,7 +2092,7 @@
         "description": "Group of settings that configures a subset of the advanced configuration details.",
         "properties": {
           "customOpensslCipherConfigTls12": {
-            "description": "The custom OpenSSL cipher suite list for TLS 1.2. This field is only valid when `tlsCipherConfigMode` is set to `CUSTOM`.",
+            "description": "The custom OpenSSL cipher suite list for TLS 1.2. Requires `tlsCipherConfigMode` = `CUSTOM`; when `tlsCipherConfigMode` is omitted, supplying a non-empty list infers `CUSTOM`.",
             "externalDocs": {
               "description": "This option corresponds to the `opensslCipherConfig` `mongod` configuration file option.",
               "url": "https://www.mongodb.com/docs/manual/reference/parameters/#mongodb-parameter-param.opensslCipherConfig"
@@ -2107,7 +2107,7 @@
             "type": "array"
           },
           "customOpensslCipherConfigTls13": {
-            "description": "The custom OpenSSL cipher suite list for TLS 1.3. This field is only valid when `tlsCipherConfigMode` is set to `CUSTOM`.",
+            "description": "The custom OpenSSL cipher suite list for TLS 1.3. Requires `tlsCipherConfigMode` = `CUSTOM`; when `tlsCipherConfigMode` is omitted, supplying a non-empty list infers `CUSTOM`.",
             "externalDocs": {
               "description": "This option corresponds to the `opensslCipherSuiteConfig` `mongod` configuration file option.",
               "url": "https://www.mongodb.com/docs/manual/reference/parameters/#mongodb-parameter-param.opensslCipherSuiteConfig"
@@ -11249,7 +11249,7 @@
             "type": "integer"
           },
           "customOpensslCipherConfigTls12": {
-            "description": "The custom OpenSSL cipher suite list for TLS 1.2. This field is only valid when `tlsCipherConfigMode` is set to `CUSTOM`.",
+            "description": "The custom OpenSSL cipher suite list for TLS 1.2. Requires `tlsCipherConfigMode` = `CUSTOM`; when `tlsCipherConfigMode` is omitted, supplying a non-empty list infers `CUSTOM`.",
             "externalDocs": {
               "description": "This option corresponds to the `opensslCipherConfig` `mongod` configuration file option.",
               "url": "https://www.mongodb.com/docs/manual/reference/parameters/#mongodb-parameter-param.opensslCipherConfig"
@@ -11264,7 +11264,7 @@
             "type": "array"
           },
           "customOpensslCipherConfigTls13": {
-            "description": "The custom OpenSSL cipher suite list for TLS 1.3. This field is only valid when `tlsCipherConfigMode` is set to `CUSTOM`.",
+            "description": "The custom OpenSSL cipher suite list for TLS 1.3. Requires `tlsCipherConfigMode` = `CUSTOM`; when `tlsCipherConfigMode` is omitted, supplying a non-empty list infers `CUSTOM`.",
             "externalDocs": {
               "description": "This option corresponds to the `opensslCipherSuiteConfig` `mongod` configuration file option.",
               "url": "https://www.mongodb.com/docs/manual/reference/parameters/#mongodb-parameter-param.opensslCipherSuiteConfig"
@@ -21091,8 +21091,7 @@
               "MAINTENANCE_WAVE_ASSIGNMENT_MODIFIED",
               "MAINTENANCE_WAVE_ASSIGNMENT_REMOVED",
               "CLUSTER_MONGUARD_ENABLED",
-              "CLUSTER_MONGUARD_DISABLED",
-              "CLUSTER_APPLY_CONNECTION_RATE_LIMIT_REQUESTED"
+              "CLUSTER_MONGUARD_DISABLED"
             ],
             "title": "Atlas Audit Types",
             "type": "string"
@@ -33731,8 +33730,7 @@
           "MAINTENANCE_WAVE_ASSIGNMENT_MODIFIED",
           "MAINTENANCE_WAVE_ASSIGNMENT_REMOVED",
           "CLUSTER_MONGUARD_ENABLED",
-          "CLUSTER_MONGUARD_DISABLED",
-          "CLUSTER_APPLY_CONNECTION_RATE_LIMIT_REQUESTED"
+          "CLUSTER_MONGUARD_DISABLED"
         ],
         "example": "CLUSTER_CREATED",
         "title": "Atlas Audit Types",
@@ -52058,7 +52056,7 @@
     "termsOfService": "https://www.mongodb.com/mongodb-management-service-terms-and-conditions",
     "title": "MongoDB Atlas Administration API",
     "version": "2.0",
-    "x-xgen-sha": "2d760d60d2a14a4d35314564ae2940ffbc20e55e"
+    "x-xgen-sha": "2e90e387cf38b3c9bb29e9094470bf6853b04717"
   },
   "openapi": "3.0.1",
   "paths": {
