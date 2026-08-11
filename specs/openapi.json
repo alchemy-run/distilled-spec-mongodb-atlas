@@ -1616,24 +1616,18 @@
       "AiModelApiKeyCreateRequest": {
         "properties": {
           "cloud": {
-            "description": "Cloud provider scope for this API key. Must be \"ANY\". Additional cloud values will be supported in future API versions.",
+            "description": "Cloud provider scope for this API key. Use \"ANY\" for a cloud-agnostic scope. Additional cloud values will be supported in future API versions.",
             "enum": [
               "ANY"
             ],
-            "example": "ANY",
-            "minLength": 1,
-            "pattern": "ANY",
             "type": "string",
             "writeOnly": true
           },
           "geography": {
-            "description": "Geography scope for this API key. Must be \"ANY\". Additional geography values will be supported in future API versions.",
+            "description": "Geography scope for this API key. Use \"ANY\" for a geography-agnostic scope. Additional geography values will be supported in future API versions.",
             "enum": [
               "ANY"
             ],
-            "example": "ANY",
-            "minLength": 1,
-            "pattern": "ANY",
             "type": "string",
             "writeOnly": true
           },
@@ -48639,6 +48633,9 @@
       "StreamsKafkaAuthentication": {
         "description": "User credentials required to connect to a Kafka Cluster. Includes the authentication type, as well as the parameters for that authentication mode.",
         "properties": {
+          "aws": {
+            "$ref": "#/components/schemas/StreamsAWSConnectionConfig"
+          },
           "clientId": {
             "description": "OIDC client identifier for authentication to the Kafka cluster.",
             "type": "string"
@@ -48995,6 +48992,15 @@
           "arn": {
             "description": "Amazon Resource Name (ARN). Required for AWS Provider and MSK vendor.",
             "pattern": "^arn:aws:kafka",
+            "type": "string"
+          },
+          "authenticationScheme": {
+            "description": "Authentication mechanism to use with this private networking connection.",
+            "enum": [
+              "TLS",
+              "SASL_SCRAM",
+              "IAM"
+            ],
             "type": "string"
           },
           "azureResourceIds": {
@@ -53746,7 +53752,7 @@
     "termsOfService": "https://www.mongodb.com/mongodb-management-service-terms-and-conditions",
     "title": "MongoDB Atlas Administration API",
     "version": "2.0",
-    "x-xgen-sha": "094a329dbbe24f02a0a9ed0b76b5666077eb0b1e"
+    "x-xgen-sha": "e79f3bb13ada125b6d9fdcd6adc511ab510d5230"
   },
   "openapi": "3.0.1",
   "paths": {
@@ -91632,7 +91638,7 @@
               }
             }
           },
-          "description": "Details to create one Private Link connection for a project. project.",
+          "description": "Details to create one Private Link connection for a project.",
           "required": true
         },
         "responses": {
